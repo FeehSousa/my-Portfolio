@@ -1,0 +1,34 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "My Personal Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "MERN",
+    "MongoDB",
+    "Express",
+    "React.js",
+    "Node.js",
+    "FullStack"
+  ],
+  "author": "Fernando Sousa",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.6",
+    "mongoose": "^5.12.6",
+    "slug": "^4.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
