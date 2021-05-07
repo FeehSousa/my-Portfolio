@@ -4,7 +4,9 @@
   "description": "My Personal Portfolio",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "backend": "nodemon server.js",
+    "frontend": "cd frontend && npm start",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\" ",
     "start": "node server.js"
   },
   "keywords": [
@@ -19,16 +21,25 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.5.1",
     "express": "^4.17.1",
     "mongodb": "^3.6.6",
     "mongoose": "^5.12.6",
     "slug": "^4.0.4"
   },
   "devDependencies": {
+    "concurrently": "^6.0.2",
     "nodemon": "^2.0.7"
   },
   "engines": {
     "node": "14.x"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FeehSousa/my-Portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FeehSousa/my-Portfolio/issues"
+  },
+  "homepage": "https://github.com/FeehSousa/my-Portfolio#readme"
 }
