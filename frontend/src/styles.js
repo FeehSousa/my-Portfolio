@@ -12,7 +12,7 @@ export const About =  styled.div`
 export const Description = styled.div`
     flex: 1;
     padding-right: 5rem;
-    z-index 2;
+    z-index: 2;
     h2 {
         font-weight: lighter;
         color: yellow;
@@ -24,8 +24,9 @@ export const Image = styled.div`
     flex: 1;
     overflow: hidden;
     img {
+        background-color :#1b1b1b;
         width: 100%;
-        height: 75;
-        object-fit: cover;
+        height: 75%;
+        object-fit: cover;  
     }
 `;

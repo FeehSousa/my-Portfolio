@@ -5,8 +5,12 @@ import GlobalStyle from './compenents/GlobalStyle'
 
 //Components
 import AboutUs from './pages/AboutUs'
+import Portfolio from './pages/Portfolio'
+import ContactMe from './pages/ContactMe'
+import Nav from './pages/Nav'
 
-
+//Roteamento
+import {Route, Switch} from 'react-router-dom'
 
 /*const ledDados = ( ) =>{
   fetch('/api')
@@ -19,7 +23,18 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <AboutUs />
+      <Nav />
+        <Switch>
+          <Route exact path="/">
+            <AboutUs />
+          </Route>
+          <Route path="/portfolio">
+            <Portfolio />
+          </Route>
+          <Route path="/contact">
+            <ContactMe />
+          </Route>
+        </Switch>
     </div>
   );
 }
