@@ -1,51 +1,44 @@
 import React from 'react'
 import styled  from 'styled-components'
 
-const Card = () => {
+
+import moment from 'moment'
+
+import {Link} from 'react-router-dom'
+
+const Card = ({project}) => {
+    /*const leDados = () =>{
+        fetch('/api/portfolio').then(res =>  res.json().then(dados => console.log(dados)))
+    }
+    leDados();*/
     return(
-        <>
+
         <StyledCard className="card">
-            <Content>
-                <Image src="https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
-                <Info>
-                    <h3>Title</h3>
-                    <h4>Date</h4>
-                    <p>Short description</p>
-                </Info>
-            </Content>
+            <Link to={`portfolio/${project.slug}`}>
+                <Content>
+                    <Image src={project.image}/>
+                    <Info>
+                        <h3>{project.title}</h3>
+                        <h4>{moment(project.createAt).format("MMM YYYY")}</h4>
+                        <p>{project.description}</p>
+                    </Info>
+                </Content>
+            </Link>
         </StyledCard>
-        <StyledCard className="card">
-            <Content >
-                <Image src="https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
-                <Info>
-                    <h3>Title</h3>
-                    <h4>Date</h4>
-                    <p>Short description</p>
-                </Info>
-            </Content>
-        </StyledCard>
-        <StyledCard className="card">
-            <Content >
-                <Image src="https://images.pexels.com/photos/1089440/pexels-photo-1089440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>
-                <Info>
-                    <h3>Title</h3>
-                    <h4>Date</h4>
-                    <p>Short description</p>
-                </Info>
-            </Content>
-        </StyledCard>
-        </>
     )
 }
 
 const StyledCard = styled.div`
-    background-color: green;
     min-height: 30vh;
+    box-shadow: 0px 5px 10px rgba(240, 255, 0, 0.2);
     border-color: #416CD5;
     text-align: center;
     border-radius: 1rem;
     cursor: pointer;
-    ouverflow: hidden;
+    overflow: hidden;
+    a{
+        text-decoration: none
+    }
 
 `;
 
@@ -54,11 +47,12 @@ const Content = styled.div`
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
-    height: 100%;
+    height: 65vh;
+    
 `;
 const Image = styled.img`
     width: 100%;
-    height: 100%;
+    height: 65%;
 
 `;
 const Info = styled.div`

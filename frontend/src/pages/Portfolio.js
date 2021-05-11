@@ -1,14 +1,23 @@
 import React from 'react'
 
 import styled from "styled-components"
+import {useLocation} from 'react-router-dom'
 
 import Card from '../compenents/Card'
+import PortfolioDetail from '../compenents/PortfolioDetail'
+import  {useApi} from '../hooks/useApi'
 
 const Portfolio = () => {
+    const location = useLocation()
+    const slug = location.pathname.split('/')[2]
+    const { data } = useApi('/portfolio')
     return(
         <PortfolioList ip="page">
+            {slug && <PortfolioDetail slug={slug}/>}
             <CardList id="carlist">
-                <Card/>
+                {data?.data?.map(project =>{
+                   return (<Card key ={project.slug} project={project}/>)
+                })} 
             </CardList>
         </PortfolioList>
     )

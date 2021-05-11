@@ -12,6 +12,12 @@ import Nav from './pages/Nav'
 //Roteamento
 import {Route, Switch} from 'react-router-dom'
 
+//Icons
+
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { fab } from "@fortawesome/free-brands-svg-icons"
+import { fas } from "@fortawesome/free-solid-svg-icons"
+
 /*const ledDados = ( ) =>{
   fetch('/api')
   .then(resultado =>{
@@ -20,6 +26,8 @@ import {Route, Switch} from 'react-router-dom'
 }*/
 
 function App() {
+
+  library.add(fab, fas)
   return (
     <div>
       <GlobalStyle />
@@ -28,7 +36,7 @@ function App() {
           <Route exact path="/">
             <AboutUs />
           </Route>
-          <Route path="/portfolio">
+          <Route path={['/portfolio:id', '/portfolio']}>
             <Portfolio />
           </Route>
           <Route path="/contact">
